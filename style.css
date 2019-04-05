@@ -67,3 +67,7 @@ html {
 .status {
     color: white;
 }
+
+.at-cv-input {
+    margin-left: 10px !important;
+}
