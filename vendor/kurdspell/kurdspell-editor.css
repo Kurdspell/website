@@ -1,0 +1,48 @@
+#kurdspell {
+    width: 400px;
+    min-height: 100px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: monospace;
+    background: #c5b5a3;;
+    color: #541e02;
+    border-radius: 4px;
+    font-size: 20px;
+    text-align: right !important;
+}
+  
+.error {
+    color: #e85f5f;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.error:hover  .suggestion-box {
+    display: block;
+}
+.error .suggestion-box {
+    display: none;
+    padding: 0;
+    list-style: none;
+    color:#c7c7c7;
+    width: 100px;
+    background:#161616;
+    margin-top: -20px;
+    border-radius: 5px;
+    margin-left: -2px;
+    position: absolute;
+}
+.error .suggestion-box li {
+    width: 100%;
+    padding: 5px;
+}
+
+.error .suggestion-box li:hover {
+    background: #313131;
+}
+.other {
+    width: max-content;
+}
+.other p{
+    font-size: 20px;
+}
