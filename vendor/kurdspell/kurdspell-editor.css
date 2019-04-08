@@ -1,23 +1,8 @@
-#kurdspell {
-    width: 400px;
-    min-height: 100px;
-    padding: 10px;
-    font-size: 14px;
-    font-family: monospace;
-    background: #c5b5a3;;
-    color: #541e02;
-    border-radius: 4px;
-    font-size: 20px;
+.ql-container {
+    font-size: 25px !important;
+    font-family: "DejaVu Sans" !important;    
+}
+.ql-blank{
+    direction: rtl !important;
     text-align: right !important;
-}
-  
-.error {
-    color: #e85f5f;
-    font-weight: 900;
-    font-size: 20px;
-}
-
-.other {
-    width: max-content;
-    display: inline;
 }
