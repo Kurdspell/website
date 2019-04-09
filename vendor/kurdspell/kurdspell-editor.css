@@ -1,6 +1,7 @@
 .ql-container {
-    font-size: 25px !important;
+    font-size: 20px !important;
     font-family: "DejaVu Sans" !important;    
+    border-radius: 5px;
 }
 .ql-blank{
     direction: rtl !important;

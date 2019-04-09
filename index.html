@@ -41,6 +41,9 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     
+    <link href="http://services.webchin.org/web-fonts/web-font?font=dejavusans" rel="stylesheet" type="text/css">
+    <link href="http://services.webchin.org/web-fonts/web-font?font=UbuntuKurdish0-81met" rel="stylesheet" type="text/css">
+    
     <link rel="stylesheet" href="./vendor/kurdspell/kurdspell-editor.css" asp-append-version="true" />
     <link rel="stylesheet" href="style.css" asp-append-version="true" />
 </head>
@@ -48,15 +51,23 @@
 <body dir="rtl">
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">کوردسپێڵ</h1>
+        <h1 class="display-4">
+            <i class="fa fa-i-cursor text-danger"></i>کوردسپێڵ
+        </h1>
+
         <p class="lead" dir="rtl">یەکەمین هەڵەچنی ئەلیکتڕۆنیی بۆ زمانی کوردی. بەم زووانە...
     </div>
-
+    
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="editor" style="width:100%;min-height:250px;" spellcheck="false" ></div>
+            </div>
+        </div>
+        <div class="row" dir="rtl" style="margin-top: 20px;margin-bottom: -15px;">
+            <div class="col-lg-12 text-center">
+                <div class="addthis_inline_share_toolbox"></div>
             </div>
         </div>
         <div class="row" dir="rtl">
@@ -65,7 +76,7 @@
                 <div class="box-part text-center">
 
                     <i class="fa fa-facebook fa-3x" style="color:#3C5A99;" aria-hidden="true"></i>
-                    <a href="https://facebook.com/kurdspell" target="_blank">
+                    <a href="https://facebook.com/kurdspell" style="color:#3c5a99;" target="_blank">
                         <div class="title">
                             <h4>Facebook</h4>
                         </div>
@@ -80,8 +91,8 @@
 
                 <div class="box-part text-center">
 
-                    <i class="fa fa-github fa-3x" aria-hidden="true"></i>
-                    <a href="https://github.com/kurdspell" target="_blank">
+                    <i class="fa fa-github fa-3x" style="color:#2a2a2a;" aria-hidden="true"></i>
+                    <a href="https://github.com/kurdspell" style="color:#2a2a2a;" target="_blank">
                         <div class="title">
                             <h4>Github</h4>
                         </div>
@@ -92,11 +103,6 @@
                 </div>
             </div>
 
-        </div>
-        <div class="row" dir="rtl">
-            <div class="col-lg-12 text-center">
-                <div class="addthis_inline_share_toolbox"></div>
-            </div>
         </div>
     </div>
 
@@ -118,8 +124,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.min.js"></script>    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script src="./vendor/kurdspell/kurdspell-editor.js"></script>
-    <link href="http://services.webchin.org/web-fonts/web-font?font=dejavusans" rel="stylesheet" type="text/css">
-    
 </body>
 
 </html>

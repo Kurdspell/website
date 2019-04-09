@@ -108,19 +108,18 @@ $(function(){
           } else {
             var text = editor.getText(range.index, range.length);
             let myBounds = editor.getBounds(range.index, range.length);
-            console.log(myBounds)
+            let editorOffset = $('.editor').offset();
             var error = _.find(window.kurdspell,{ 'original': text.trim() })
             if(error){  
-                $(pop).css('top',(myBounds.top+40)+"px").css('left',(myBounds.left-myBounds.width)+"px")
+                $(pop).css('top',(myBounds.top+editorOffset.top+35)+"px").css('left',(myBounds.left + editorOffset.left -myBounds.width)+"px")
                 var popBody = $(pop).find('.popover-body')[0]
                 var suggestionsHtml = "";
                 $(error.suggestions).each(function(){
-                    suggestionsHtml+= "<a class='pick-suggestion' data-index='"+range.index+"' data-length='"+range.length+"' href='#'>"+this+"</a><br>";
+                    suggestionsHtml+= "<a class='pick-suggestion' data-selection='"+(text.trim())+"' data-index='"+range.index+"' data-length='"+range.length+"' href='#'>"+this+"</a><br>";
                 })
                 $(popBody).html(suggestionsHtml)
                 $(pop).fadeIn(300)
             }
-            
           }
         } else {
         //   console.log('Cursor not in the editor');
@@ -130,8 +129,15 @@ $(function(){
     $(document).on('click','.pick-suggestion',function(){
         var index = $(this).data('index')
         var length = $(this).data('length')
+        var selectedText = $(this).data('selection')
         var text = $(this).text()
-        console.log(index,length,text)
+        var editorText = editor.getText();
+        editorText = editorText.replace(selectedText, text);
+        editor.setText(editorText)
+        editor.format('direction', 'rtl');
+        editor.format('align', 'right');
+        spellCheck(editorText,editor)
+        console.log()
     })
     function doneTyping (editor) {
         var text = editor.getText();
@@ -151,7 +157,7 @@ $(function(){
                 $(response).each(function(){
                     editor.formatText(this.errorRange.from, (parseInt(this.errorRange.to)+1), {                   // unbolds 'hello' and set its color to blue
                         'bold': true,
-                        // 'underline':true,
+                        'underline':true,
                         'color': 'rgb(255, 0, 0)'
                     });
                 })
