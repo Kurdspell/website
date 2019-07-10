@@ -40,15 +40,18 @@
     <title>کوردسپێڵ</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    
+
     <link href="http://services.webchin.org/web-fonts/web-font?font=dejavusans" rel="stylesheet" type="text/css">
-    <link href="http://services.webchin.org/web-fonts/web-font?font=UbuntuKurdish0-81met" rel="stylesheet" type="text/css">
-    
+    <link href="http://services.webchin.org/web-fonts/web-font?font=UbuntuKurdish0-81met" rel="stylesheet"
+        type="text/css">
+
     <link rel="stylesheet" href="./vendor/kurdspell/kurdspell-editor.css" asp-append-version="true" />
     <link rel="stylesheet" href="style.css" asp-append-version="true" />
 </head>
 
 <body dir="rtl">
+
+    <h2 class="change_mode" onclick="changeMode()">🌓</h2 class="change_mode">
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">
@@ -57,12 +60,12 @@
 
         <p class="lead" dir="rtl">یەکەمین هەڵەچنی ئەلیکتڕۆنیی بۆ زمانی کوردی. بەم زووانە...
     </div>
-    
+
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="editor" style="width:100%;min-height:250px;" spellcheck="false" ></div>
+                <div class="editor" style="width:100%;min-height:250px;" spellcheck="false"></div>
             </div>
         </div>
         <div class="row" dir="rtl" style="margin-top: 20px;margin-bottom: -15px;">
@@ -71,9 +74,9 @@
             </div>
         </div>
         <div class="row" dir="rtl">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
 
-                <div class="box-part text-center">
+                <div class="box-part text-center hovered fb">
 
                     <i class="fa fa-facebook fa-3x" style="color:#3C5A99;" aria-hidden="true"></i>
                     <a href="https://facebook.com/kurdspell" style="color:#3c5a99;" target="_blank">
@@ -87,9 +90,9 @@
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
 
-                <div class="box-part text-center">
+                <div class="box-part text-center hovered github">
 
                     <i class="fa fa-github fa-3x" style="color:#2a2a2a;" aria-hidden="true"></i>
                     <a href="https://github.com/kurdspell" style="color:#2a2a2a;" target="_blank">
@@ -106,24 +109,64 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ca5b9b58163203e"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ca5b9b58163203e"></script>
     <!-- Quil Text Editor -->
-        <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
     <!-- Theme included stylesheets -->
-        <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-        <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
     <!-- End of quil text editor -->
 
     <!-- Bootsrap and its components  -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <!-- ---------------------------- -->
     <!-- lodash library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.min.js"></script>    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script src="./vendor/kurdspell/kurdspell-editor.js"></script>
+    <script>
+        let nightModeToggle = false;
+        const icon = document.querySelector('.change_mode');
+        icon.addEventListener('onclick', changeMode);
+
+
+        function changeMode() {
+            const bod = document.querySelector("body");
+            const kurdSpell = document.querySelector(".pricing-header");
+            const hove = document.querySelector(".ql-container");
+            const socials= document.querySelector(".fb");
+            const socials1= document.querySelector(".github");
+
+            icon.classList.toggle("rotated")
+
+            if (!nightModeToggle) {
+                bod.classList.add("bg-dark");
+                socials.classList.add("bg-dark");
+                socials.classList.add("text-white");
+                socials1.classList.add("bg-dark");
+                socials1.classList.add("text-white");
+                kurdSpell.classList.add("text-white");
+                hove.style.color = "white";
+                nightModeToggle = !nightModeToggle;
+            }
+            else if (nightModeToggle) {
+                    socials.classList.remove("bg-dark");
+                    socials.classList.remove("text-white");
+                    socials1.classList.remove("bg-dark");
+                    socials1.classList.remove("text-white");
+                    bod.classList.remove("bg-dark");
+                    hove.style.color = "black";
+                    kurdSpell.classList.remove("text-white");
+                nightModeToggle = !nightModeToggle;
+            }
+        }
+    </script>
+
 </body>
 
 </html>

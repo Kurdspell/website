@@ -2,7 +2,10 @@
     font-size: 20px !important;
     font-family: "DejaVu Sans" !important;    
     border-radius: 5px;
+    box-shadow: 0 0  10px rgba(0, 0, 0, 0.3);
+    
 }
+
 .ql-blank{
     direction: rtl !important;
     text-align: right !important;

@@ -1,33 +1,67 @@
 /* @import url(https://fonts.googleapis.com/earlyaccess/notonaskharabic.css); */
 
-body{
+body {
     /* background: #eee; */
     font-family: "Ubuntu Kurdish", serif !important;
 }
-span{
-    font-size:15px;
-}
-a{
-  text-decoration:none; 
-  color: #0062cc;
-  border-bottom:2px solid #0062cc;
-}
-.box{
-    padding:60px 0px;
+
+.change_mode {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
-.box-part{
+.change_mode.rotated {
+    -webkit-transform : rotate(-180deg); 
+    -moz-transform : rotate(-180deg); 
+    -ms-transform : rotate(-180deg); 
+    -o-transform : rotate(-180deg); 
+    transform : rotate(-180deg); 
+}
+.hovered {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: ease-in-out 0.3s;
+}
+
+.hovered:hover {
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: ease-in-out 0.3s;
+}
+
+
+span {
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #0062cc;
+    border-bottom: 2px solid #0062cc;
+}
+
+.box {
+    padding: 60px 0px;
+}
+
+.box-part {
     background: #f9f9f9;
     border-radius: 5px;
-    padding:60px 10px;
-    margin:30px 0px;
-}
-.text{
-    margin:20px 0px;
+    padding: 60px 10px;
+    margin: 30px 0px;
 }
 
-.fa{
-     color:#4183D7;
+.text {
+    margin: 20px 0px;
+}
+
+.fa {
+    color: #4183D7;
 }
 
 html {
